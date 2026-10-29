@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas Construction Build & Renovation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'blueprint-navy': '#1E3A8A', /* Reverted to the lighter, brighter blue */
+                        'steel-grey': '#4B5563',
+                        'safety-orange': '#EA580C',
+                        'light-bg': '#F9FAFB',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
+                        'heading': ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'blueprint-pattern': "url('data:image/svg+xml,%3Csvg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.05\" fill-rule=\"evenodd\"%3E%3Ccircle cx=\"3\" cy=\"3\" r=\"3\"/%3E%3Ccircle cx=\"13\" cy=\"13\" r=\"3\"/%3E%3C/g%3E%3C/svg%3E')",
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-padding-top: 80px; }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-heading { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="bg-light-bg text-gray-800 antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 bg-white shadow-md border-b-4 border-blueprint-navy">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <a href="#home" class="flex flex-col justify-center border-l-4 border-safety-orange pl-3">
+                        <span class="text-2xl font-black text-blueprint-navy leading-none tracking-tight">THOMAS</span>
+                        <span class="text-[11px] font-bold text-steel-grey tracking-widest uppercase mt-1">Construction Build & Renovation</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex space-x-8 items-center text-sm font-bold tracking-wide text-blueprint-navy">
+                    <a href="#home" class="hover:text-safety-orange transition">HOME</a>
+                    <a href="#about" class="hover:text-safety-orange transition">ABOUT</a>
+                    <a href="#services" class="hover:text-safety-orange transition">SERVICES</a>
+                    <a href="#gallery" class="hover:text-safety-orange transition">GALLERY</a>
+                    <a href="#contact" class="hover:text-safety-orange transition">CONTACT</a>
+                    <a href="https://wa.me/27631466753" target="_blank" class="bg-safety-orange text-white px-6 py-2.5 rounded hover:bg-orange-700 transition shadow-md flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp Us
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-blueprint-navy hover:text-safety-orange focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-200 shadow-xl absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1 text-center font-bold text-blueprint-navy">
+                <a href="#home" class="block px-3 py-3 hover:bg-light-bg hover:text-safety-orange transition rounded">HOME</a>
+                <a href="#about" class="block px-3 py-3 hover:bg-light-bg hover:text-safety-orange transition rounded">ABOUT</a>
+                <a href="#services" class="block px-3 py-3 hover:bg-light-bg hover:text-safety-orange transition rounded">SERVICES</a>
+                <a href="#gallery" class="block px-3 py-3 hover:bg-light-bg hover:text-safety-orange transition rounded">GALLERY</a>
+                <a href="#contact" class="block px-3 py-3 hover:bg-light-bg hover:text-safety-orange transition rounded">CONTACT</a>
+                <div class="pt-4 mt-2 border-t border-gray-200">
+                    <a href="https://wa.me/27631466753" target="_blank" class="block bg-safety-orange text-white px-5 py-3 rounded hover:bg-orange-700 transition w-full shadow flex justify-center items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-[80px] min-h-[90vh] flex items-center justify-center overflow-hidden bg-blueprint-navy">
+        <div class="absolute inset-0 w-full h-full">
+            <!-- Increased opacity from 20% to 60% so the picture is much more visible -->
+            <img src="hero.png" alt="Construction Site" class="w-full h-full object-cover opacity-60">
+            <!-- Adjusted the gradient to be more transparent on the right side -->
+            <div class="absolute inset-0 bg-gradient-to-r from-blueprint-navy/95 via-blueprint-navy/70 to-blueprint-navy/20"></div>
+            <!-- Lowered the blueprint pattern opacity slightly so it doesn't hide the photo -->
+            <div class="absolute inset-0 bg-blueprint-pattern opacity-40"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10 py-16">
+            <div class="max-w-3xl border-l-8 border-safety-orange pl-6 md:pl-10">
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-bold text-xs tracking-widest mb-6 py-2 px-4 rounded uppercase">
+                    <i class="fa-solid fa-certificate text-safety-orange"></i> NHBRC Registered
+                </div>
+                
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-heading font-black text-white mb-6 leading-tight uppercase">
+                    Build With <span class="text-safety-orange">Confidence.</span><br>
+                    Build With Thomas.
+                </h1>
+                
+                <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl font-light">
+                    We specialize in building. From new houses to custom alterations and structural slabs, we deliver quality craftsmanship from the ground up.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#services" class="text-center bg-safety-orange text-white font-bold py-4 px-8 rounded hover:bg-orange-700 transition shadow-lg text-lg uppercase tracking-wide">Explore Services</a>
+                    <a href="tel:0631466753" class="text-center bg-transparent border-2 border-white text-white font-bold py-4 px-8 rounded hover:bg-white hover:text-blueprint-navy transition text-lg flex items-center justify-center gap-2 uppercase tracking-wide">
+                        <i class="fa-solid fa-phone"></i> 063 146 6753
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Strip -->
+    <section class="bg-white py-8 border-b border-gray-200 shadow-sm relative z-20 -mt-10 mx-4 md:mx-auto max-w-6xl rounded-lg">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="flex flex-col items-center p-2">
+                    <i class="fa-solid fa-clipboard-check text-3xl text-safety-orange mb-3"></i>
+                    <h4 class="text-blueprint-navy font-bold text-sm md:text-base uppercase tracking-wide">NHBRC Registered</h4>
+                </div>
+                <div class="flex flex-col items-center p-2">
+                    <i class="fa-solid fa-helmet-safety text-3xl text-safety-orange mb-3"></i>
+                    <h4 class="text-blueprint-navy font-bold text-sm md:text-base uppercase tracking-wide">Project Management</h4>
+                </div>
+                <div class="flex flex-col items-center p-2">
+                    <i class="fa-solid fa-pen-ruler text-3xl text-safety-orange mb-3"></i>
+                    <h4 class="text-blueprint-navy font-bold text-sm md:text-base uppercase tracking-wide">Plan Approvals</h4>
+                </div>
+                <div class="flex flex-col items-center p-2">
+                    <i class="fa-solid fa-layer-group text-3xl text-safety-orange mb-3"></i>
+                    <h4 class="text-blueprint-navy font-bold text-sm md:text-base uppercase tracking-wide">Slab Erection</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-light-bg">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-16 max-w-7xl mx-auto">
+                <div class="lg:w-1/2">
+                    <h2 class="text-sm font-bold text-safety-orange tracking-widest uppercase mb-2">About Us</h2>
+                    <h3 class="text-4xl md:text-5xl font-heading font-black text-blueprint-navy mb-8 leading-tight">Solid Foundations, Expert Craftsmanship.</h3>
+                    
+                    <p class="text-lg text-steel-grey mb-6 leading-relaxed">
+                        At Thomas Construction Build & Renovation, we take your vision from the drawing board to the final coat of paint. As an <strong class="text-blueprint-navy">NHBRC Registered</strong> construction company, we adhere to the highest national building standards, ensuring every brick laid is safe, compliant, and built to last.
+                    </p>
+                    
+                    <p class="text-lg text-steel-grey mb-8 leading-relaxed">
+                        We do not just build houses; we manage the entire lifecycle of your project. Whether you need architectural drawings and municipal plan approvals, a new double garage, or specialized interior designs, our experienced team provides a complete, hassle-free construction experience.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-3 text-blueprint-navy font-medium"><i class="fa-solid fa-square-check text-safety-orange text-xl"></i> Fully Certified & Registered</li>
+                        <li class="flex items-center gap-3 text-blueprint-navy font-medium"><i class="fa-solid fa-square-check text-safety-orange text-xl"></i> Start-to-Finish Project Execution</li>
+                        <li class="flex items-center gap-3 text-blueprint-navy font-medium"><i class="fa-solid fa-square-check text-safety-orange text-xl"></i> Dedicated to Structural Integrity</li>
+                    </ul>
+                    
+                    <a href="#contact" class="inline-flex items-center gap-2 bg-blueprint-navy text-white font-bold py-4 px-8 rounded hover:bg-gray-800 transition shadow-md uppercase tracking-wide">
+                        Discuss Your Project <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="lg:w-1/2 relative w-full">
+                    <div class="absolute top-0 right-0 w-3/4 h-full bg-blueprint-navy/10 rounded-lg transform translate-x-4 translate-y-4 -z-10"></div>
+                    <img src="about.jpg" alt="Thomas Construction Team at Work" class="w-full h-auto object-cover rounded-lg shadow-xl border-8 border-white">
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -left-6 bg-safety-orange text-white p-6 rounded-lg shadow-2xl">
+                        <p class="text-4xl font-heading font-black mb-1">100%</p>
+                        <p class="text-sm font-bold uppercase tracking-wider">Quality<br>Guaranteed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <h2 class="text-sm font-bold text-safety-orange tracking-widest uppercase mb-2">What We Do</h2>
+                <h3 class="text-4xl md:text-5xl font-heading font-black text-blueprint-navy mb-6">Our Building Services</h3>
+                <p class="text-steel-grey text-lg">We specialize in building and offer a full suite of construction, renovation, and architectural services to bring your property to life.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                
+                <!-- Service Group 1 -->
+                <div class="bg-light-bg p-8 rounded-lg border border-gray-200 hover:border-safety-orange hover:shadow-lg transition duration-300">
+                    <div class="w-14 h-14 bg-blueprint-navy text-white rounded flex items-center justify-center text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-compass-drafting"></i>
+                    </div>
+                    <h4 class="text-2xl font-heading font-black text-blueprint-navy mb-4 uppercase">Architectural & Structural</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-chevron-right text-safety-orange mt-1"></i>
+                            <div>
+                                <span class="font-bold text-gray-900 block">Drawing & Approval of Plans</span>
+                                <span class="text-steel-grey text-sm">Professional drafting and municipal approval processing.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-chevron-right text-safety-orange mt-1"></i>
+                            <div>
+                                <span class="font-bold text-gray-900 block">Supplying & Erecting Slabs</span>
+                                <span class="text-steel-grey text-sm">High-quality concrete slab supply and safe erection.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service Group 2 -->
+                <div class="bg-light-bg p-8 rounded-lg border border-gray-200 hover:border-safety-orange hover:shadow-lg transition duration-300">
+                    <div class="w-14 h-14 bg-blueprint-navy text-white rounded flex items-center justify-center text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </div>
+                    <h4 class="text-2xl font-heading font-black text-blueprint-navy mb-4 uppercase">New Builds & Additions</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-chevron-right text-safety-orange mt-1"></i>
+                            <div>
+                                <span class="font-bold text-gray-900 block">New Houses</span>
+                                <span class="text-steel-grey text-sm">Complete ground-up residential construction.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-chevron-right text-safety-orange mt-1"></i>
+                            <div>
+                                <span class="font-bold text-gray-900 block">Double Garages & Back Rooms</span>
+                                <span class="text-steel-grey text-sm">Secure custom-built garages and domestic quarters.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-chevron-right text-safety-orange mt-1"></i>
+                            <div>
+                                <span class="font-bold text-gray-900 block">Boundary Walls</span>
+                                <span class="text-steel-grey text-sm">Secure and structurally sound perimeter walls.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service Group 3 -->
+                <div class="bg-light-bg p-8 rounded-lg border border-gray-200 hover:border-safety-orange hover:shadow-lg transition duration-300">
+                    <div class="w-14 h-14 bg-blueprint-navy text-white rounded flex items-center justify-center text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-hammer"></i>
+                    </div>
+                    <h4 class="text-2xl font-heading font-black text-blueprint-navy mb-4 uppercase">Renovations & Protection</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-chevron-right text-safety-orange mt-1"></i>
+                            <div>
+                                <span class="font-bold text-gray-900 block">Alterations</span>
+                                <span class="text-steel-grey text-sm">Expert structural modifications to transform your space.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-chevron-right text-safety-orange mt-1"></i>
+                            <div>
+                                <span class="font-bold text-gray-900 block">Roofing</span>
+                                <span class="text-steel-grey text-sm">Installation, repair, and structural roof framing.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-chevron-right text-safety-orange mt-1"></i>
+                            <div>
+                                <span class="font-bold text-gray-900 block">Waterproofing</span>
+                                <span class="text-steel-grey text-sm">Professional sealing to protect from water damage.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service Group 4 -->
+                <div class="bg-light-bg p-8 rounded-lg border border-gray-200 hover:border-safety-orange hover:shadow-lg transition duration-300">
+                    <div class="w-14 h-14 bg-blueprint-navy text-white rounded flex items-center justify-center text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-paint-roller"></i>
+                    </div>
+                    <h4 class="text-2xl font-heading font-black text-blueprint-navy mb-4 uppercase">Interior Finishing</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-chevron-right text-safety-orange mt-1"></i>
+                            <div>
+                                <span class="font-bold text-gray-900 block">Plastering & Tiling</span>
+                                <span class="text-steel-grey text-sm">Smooth wall finishes and precision floor/wall tiling.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-chevron-right text-safety-orange mt-1"></i>
+                            <div>
+                                <span class="font-bold text-gray-900 block">Painting</span>
+                                <span class="text-steel-grey text-sm">Interior and exterior professional painting services.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-chevron-right text-safety-orange mt-1"></i>
+                            <div>
+                                <span class="font-bold text-gray-900 block">Interior Designs</span>
+                                <span class="text-steel-grey text-sm">Custom interior finishing to bring spaces to life.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-blueprint-navy text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-blueprint-pattern opacity-10"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <h2 class="text-sm font-bold text-safety-orange tracking-widest uppercase mb-2">Portfolio</h2>
+                <h3 class="text-4xl md:text-5xl font-heading font-black mb-4">Our Craftsmanship in Action</h3>
+                <p class="text-gray-300 text-lg">Browse our portfolio of completed projects. From floor plans to finished homes, see the quality and dedication we bring to every site.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+                <div class="overflow-hidden rounded shadow-lg group bg-white aspect-square relative">
+                    <img src="gallery_1.jpg" alt="Construction Project 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-blueprint-navy/30 group-hover:bg-transparent transition duration-300"></div>
+                </div>
+                <div class="overflow-hidden rounded shadow-lg group bg-white aspect-square relative">
+                    <img src="gallery_2.jpg" alt="Construction Project 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-blueprint-navy/30 group-hover:bg-transparent transition duration-300"></div>
+                </div>
+                <div class="overflow-hidden rounded shadow-lg group bg-white aspect-square relative">
+                    <img src="gallery_3.jpg" alt="Construction Project 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-blueprint-navy/30 group-hover:bg-transparent transition duration-300"></div>
+                </div>
+                <div class="overflow-hidden rounded shadow-lg group bg-white aspect-square relative">
+                    <img src="gallery_4.jpg" alt="Construction Project 4" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-blueprint-navy/30 group-hover:bg-transparent transition duration-300"></div>
+                </div>
+                <div class="overflow-hidden rounded shadow-lg group bg-white aspect-square relative">
+                    <img src="gallery_5.jpg" alt="Construction Project 5" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-blueprint-navy/30 group-hover:bg-transparent transition duration-300"></div>
+                </div>
+                <div class="overflow-hidden rounded shadow-lg group bg-white aspect-square relative">
+                    <img src="gallery_6.jpg" alt="Construction Project 6" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-blueprint-navy/30 group-hover:bg-transparent transition duration-300"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-light-bg">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-16 max-w-6xl mx-auto">
+                <!-- Contact Details -->
+                <div class="lg:w-5/12">
+                    <h2 class="text-sm font-bold text-safety-orange tracking-widest uppercase mb-2">Get in Touch</h2>
+                    <h3 class="text-4xl md:text-5xl font-heading font-black text-blueprint-navy mb-6">Let's Start Your Next Project.</h3>
+                    <p class="text-steel-grey mb-10 text-lg leading-relaxed">Ready to build a new house, add a back room, or erect a slab? Contact Thomas Construction today for a professional consultation and quote.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4 bg-white p-4 rounded border border-gray-200 shadow-sm">
+                            <div class="w-12 h-12 rounded bg-blueprint-navy/10 flex items-center justify-center text-blueprint-navy text-xl flex-shrink-0">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-steel-grey uppercase font-bold tracking-wider">Contact Person</p>
+                                <p class="font-bold text-blueprint-navy text-lg">Thomas</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4 bg-white p-4 rounded border border-gray-200 shadow-sm">
+                            <div class="w-12 h-12 rounded bg-safety-orange/10 flex items-center justify-center text-safety-orange text-xl flex-shrink-0">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-steel-grey uppercase font-bold tracking-wider">Phone / WhatsApp</p>
+                                <a href="https://wa.me/27631466753" target="_blank" class="font-bold text-blueprint-navy text-lg hover:text-safety-orange transition">063 146 6753</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4 bg-white p-4 rounded border border-gray-200 shadow-sm">
+                            <div class="w-12 h-12 rounded bg-blueprint-navy/10 flex items-center justify-center text-blueprint-navy text-xl flex-shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-steel-grey uppercase font-bold tracking-wider">Email Us</p>
+                                <a href="mailto:info@thomasconstruction.co.za" class="font-bold text-blueprint-navy text-lg hover:text-safety-orange transition">info@thomasconstruction.co.za</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form / WhatsApp Fallback -->
+                <div class="lg:w-7/12">
+                    <div class="bg-white p-8 md:p-10 rounded-lg shadow-xl border-t-8 border-blueprint-navy">
+                        <h3 class="text-2xl font-heading font-black text-blueprint-navy mb-6">Request a Quote</h3>
+                        <form id="contact-form" class="space-y-5">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-sm font-bold text-steel-grey mb-1">Full Name</label>
+                                    <input type="text" id="form-name" required class="w-full px-4 py-3 bg-light-bg border border-gray-300 rounded focus:outline-none focus:border-blueprint-navy focus:ring-1 focus:ring-blueprint-navy transition">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-steel-grey mb-1">Phone Number</label>
+                                    <input type="tel" id="form-phone" required class="w-full px-4 py-3 bg-light-bg border border-gray-300 rounded focus:outline-none focus:border-blueprint-navy focus:ring-1 focus:ring-blueprint-navy transition">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-steel-grey mb-1">Project Type</label>
+                                <select id="form-interest" class="w-full px-4 py-3 bg-light-bg border border-gray-300 rounded focus:outline-none focus:border-blueprint-navy focus:ring-1 focus:ring-blueprint-navy transition">
+                                    <option value="" disabled selected>Select a service...</option>
+                                    <option value="New House Build">New House Build</option>
+                                    <option value="Alterations & Additions">Alterations & Additions</option>
+                                    <option value="Drawing & Plan Approval">Drawing & Plan Approval</option>
+                                    <option value="Supplying & Erecting Slabs">Supplying & Erecting Slabs</option>
+                                    <option value="Roofing or Waterproofing">Roofing or Waterproofing</option>
+                                    <option value="Interior Finishing (Paint/Tile/Plaster)">Interior Finishing</option>
+                                    <option value="Other Construction Work">Other Construction Work</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-steel-grey mb-1">Project Description & Location</label>
+                                <textarea id="form-message" rows="4" class="w-full px-4 py-3 bg-light-bg border border-gray-300 rounded focus:outline-none focus:border-blueprint-navy focus:ring-1 focus:ring-blueprint-navy transition resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-safety-orange text-white font-bold py-4 rounded hover:bg-orange-700 transition flex justify-center items-center gap-2 shadow-md uppercase tracking-wide">
+                                <i class="fa-brands fa-whatsapp text-xl"></i> Submit via WhatsApp
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blueprint-navy text-white pt-16 pb-8 border-t-8 border-safety-orange relative overflow-hidden">
+        <div class="absolute inset-0 bg-blueprint-pattern opacity-5"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <div class="mb-6 border-l-4 border-safety-orange pl-3">
+                        <span class="text-2xl font-black text-white leading-none tracking-tight block">THOMAS</span>
+                        <span class="text-[10px] font-bold text-gray-400 tracking-widest uppercase mt-1 block">Construction Build & Renovation</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                        An NHBRC Registered construction company specializing in new builds, alterations, plan approvals, and complete structural renovations.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://wa.me/27631466753" target="_blank" class="w-10 h-10 rounded bg-white/10 flex items-center justify-center hover:bg-safety-orange transition">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                        </a>
+                        <a href="tel:0631466753" class="w-10 h-10 rounded bg-white/10 flex items-center justify-center hover:bg-safety-orange transition">
+                            <i class="fa-solid fa-phone text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-heading font-bold mb-6 text-white uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#home" class="hover:text-safety-orange transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-safety-orange"></i> Home</a></li>
+                        <li><a href="#about" class="hover:text-safety-orange transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-safety-orange"></i> About Us</a></li>
+                        <li><a href="#services" class="hover:text-safety-orange transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-safety-orange"></i> All Services</a></li>
+                        <li><a href="#gallery" class="hover:text-safety-orange transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-safety-orange"></i> Project Gallery</a></li>
+                        <li><a href="#contact" class="hover:text-safety-orange transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-safety-orange"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-heading font-bold mb-6 text-white uppercase tracking-wider">Core Services</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-safety-orange text-xs"></i> New Houses & Back Rooms</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-safety-orange text-xs"></i> Drawing & Plan Approvals</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-safety-orange text-xs"></i> Supplying & Erecting Slabs</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-safety-orange text-xs"></i> Roofing & Waterproofing</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-safety-orange text-xs"></i> Plastering, Tiling & Painting</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-heading font-bold mb-6 text-white uppercase tracking-wider">Contact Info</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-phone mt-1 text-safety-orange"></i>
+                            <div>
+                                <span class="block text-white font-bold mb-1">Thomas</span>
+                                <a href="tel:0631466753" class="block hover:text-safety-orange transition">063 146 6753</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-certificate mt-1 text-safety-orange"></i>
+                            <span>NHBRC Registered Builder</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2026 Thomas Construction Build & Renovation. All rights reserved.</p>
+                <p class="mt-2 md:mt-0 font-bold tracking-widest uppercase">Build With Confidence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when a link is clicked
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // WhatsApp Form Handler
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('form-name').value;
+            const phone = document.getElementById('form-phone').value;
+            const interest = document.getElementById('form-interest').value;
+            const message = document.getElementById('form-message').value;
+
+            let text = `Hi Thomas, I have a construction enquiry from the website:%0A%0A`;
+            text += `*Name:* ${name}%0A`;
+            text += `*Phone:* ${phone}%0A`;
+            if (interest) text += `*Project Type:* ${interest}%0A`;
+            if (message) text += `*Description:* ${message}%0A`;
+
+            window.open(`https://wa.me/27631466753?text=${text}`, '_blank');
+        });
+    </script>
+</body>
+</html>
